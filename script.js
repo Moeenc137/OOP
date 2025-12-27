@@ -69,8 +69,9 @@ console.log(civic);
 //class to another class, like a child gets inheritence of parents.
 
 class person {
-  constructor() {
+  constructor(name) {
     this.species = "homo sapiens";
+    this.name = name;
   }
   sleep() {
     sleep: "Human sleeps";
@@ -80,16 +81,25 @@ class person {
   }
 }
 
+//super keyword: basically to access anything from parent class , super keyword
+//should be used, and also to add anything in child constructor, super keyword
+//should be used inside child constructor to call the parent.
+
 class Engineer extends person {
+  constructor(name, type) {
+    super();
+    this.type = type;
+    this.name = name;
+  }
   work() {
     work: "Build something";
   }
 }
-let Engineer = new Engineer();
+let Engineer1 = new Engineer("Moin", "Chemical Engineer");
 
 class doctor extends person {
   work() {
     work: "treats patients";
   }
 }
-let Engineer = new Engineer();
+let doctor1 = new doctor();
