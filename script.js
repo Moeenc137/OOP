@@ -86,10 +86,9 @@ class person {
 //should be used inside child constructor to call the parent.
 
 class Engineer extends person {
-  constructor(name, type) {
+  constructor(type) {
     super();
     this.type = type;
-    this.name = name;
   }
   work() {
     work: "Build something";
@@ -102,4 +101,31 @@ class doctor extends person {
     work: "treats patients";
   }
 }
-let doctor1 = new doctor();
+let doctor1 = new doctor("Fatima");
+
+//exercise:
+class user {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+  viewData() {
+    console.log("data");
+  }
+}
+let user1 = new user("Moin", "moin@");
+
+class admin extends user {
+  constructor(name, email) {
+    super();
+    this.name = name;
+    this.email = email;
+  }
+  editData() {
+    console.log("edit data");
+  }
+}
+
+let admin1 = new admin("Admin", "admin@");
+
+//you can also do error handling in js by just using try and catch.
